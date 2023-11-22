@@ -109,10 +109,12 @@ Get all playlists under the user's account and corresponding IDs:
       4kihcTS1QYwAtKjkAtabkP: House
       5M9qy5FiKU0wSPZOWglrMO: jazz hiphop
     ```
+    
 Get all genres collected on Spotify:
   ```ShellSession
   $ python main.py -gl
   ```
+
 Generate a new playlist based on a seed playlist ID with 20 tracks:
 
 ```ShellSession
