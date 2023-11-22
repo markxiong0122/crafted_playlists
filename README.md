@@ -73,13 +73,10 @@ directly.
 
 ```ShellSession
 $ python main.py -h
-usage: main.py -u USER_ID [-s SEED_PLAYLIST] [-nt NUMBER_TRACKS] [--new-artists] [--refresh] [--list-playlists] [-h]
+usage: main.py -u USER_ID [-s SEED_PLAYLIST] [-nt NUMBER_TRACKS] [--new-artists] [--refresh] [-pl -LIST_PLAYLISTS] [-gl LIST-GENRES] [-h HELP] [-g GENRE] [-bpm BPM]
 
 TuneCraft - Spotify Playlist Generator
 
-Required Arguments:
-  -u USER_ID, --user-id USER_ID
-                        Your Spotify user ID
 
 Optional Arguments:
   -s SEED_PLAYLIST, --seed-playlist SEED_PLAYLIST
@@ -88,8 +85,13 @@ Optional Arguments:
                         Number of tracks in the generated playlist
   --new-artists         Include only new artists
   --refresh             Refresh the local database from Spotify
-  --list-playlists      List all your playlists
+  -pl --list-playlists  List all your playlists
+  -gl --list-genres     List all genres
+  -g --genre            Include only the input genre
+  -bpm --bpm            Include only tracks with the specified tempo
   -h, --help            Show this help message and exit
+
+
 ```
 
 #### Usage Examples <a name="usage_examples"></a>
