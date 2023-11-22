@@ -101,7 +101,7 @@ Get all playlists under the user's account and corresponding IDs:
   ```ShellSession
   $ python main.py -pl
   ```
-  You should expect something like: 
+  - You should expect something like: 
   ```ShellSession
   $ Welcome to Spotify Playlist Generator!
     Your playlists:
