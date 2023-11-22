@@ -121,25 +121,24 @@ Get all genres collected on Spotify:
 Generate a new playlist based on a seed playlist ID with 20 tracks:
 
 ```ShellSession
-$ python main.py -u your_user_id -s your_seed_playlist_id -nt 20
+$ python main.py -s your_seed_playlist_id -nt 20
+```
+Generate a new hiphop playlist based on a seed playlist ID with 20 tracks with 70 bpm:
+
+```ShellSession
+$ python main.py -s your_seed_playlist_id -nt 20 -g hip-hop -bpm 70
 ```
 
 Generate a new playlist with only new artists:
 
 ```ShellSession
-$ python main.py -u your_user_id -s your_seed_playlist_id --new-artists
-```
-
-List all your playlists:
-
-```ShellSession
-$ python main.py -u your_user_id --list-playlists
+$ python main.py -s your_seed_playlist_id --new-artists
 ```
 
 Refresh the local database and list all your playlists:
 
 ```ShellSession
-$ python main.py -u your_user_id --refresh --list-playlists
+$ python main.py --refresh --list-playlists
 ```
 
 
