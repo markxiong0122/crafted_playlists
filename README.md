@@ -101,15 +101,15 @@ Get all playlists under the user's account and corresponding IDs:
   ```ShellSession
   $ python main.py -pl
   ```
-  - You should expect something like: 
+  - You should expect something like:
   - ```ShellSession
-  $ Welcome to Spotify Playlist Generator!
-    Your playlists:
-    5cvqOBnWyutLDR9gn2qGCP: #RECENT
-    4kihcTS1QYwAtKjkAtabkP: House
-    6gkpeoYoAEKjFgnAvLAaLK: 蹦
-    5M9qy5FiKU0wSPZOWglrMO: jazz hiphop
-  ```
+    $ Welcome to Spotify Playlist Generator!
+      Your playlists:
+      5cvqOBnWyutLDR9gn2qGCP: #RECENT
+      4kihcTS1QYwAtKjkAtabkP: House
+      6gkpeoYoAEKjFgnAvLAaLK: 蹦
+      5M9qy5FiKU0wSPZOWglrMO: jazz hiphop
+    ```
 
 Generate a new playlist based on a seed playlist ID with 20 tracks:
 
