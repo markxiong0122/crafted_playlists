@@ -149,8 +149,10 @@ $ python main.py --refresh --list-playlists
 
 Todo <a name = "todo"></a>
 
-Add support for generating playlists based on moods and genres.
+Add support for generating playlists based on moods.
+
 Implement a web interface for easier user interaction.
+
 Improve the playlist generation algorithm for better recommendations.
 
 
