@@ -65,6 +65,9 @@ $ conda activate tune_craft
 $ which python
 /home/<user>/anaconda3/envs/src/bin/python
 ```
+#### env.
+
+Configure your username (could be fount in your Spotify profile) in .env
 
 #### main.py <a name = "src_main"></a>
 
