@@ -82,6 +82,7 @@ TuneCraft - Spotify Playlist Generator
 
 
 Optional Arguments:
+  -u USERNAME --username Configure the account to generate playlist to
   -s SEED_PLAYLIST, --seed-playlist SEED_PLAYLIST
                         The seed playlist ID to generate a new playlist from
   -nt NUMBER_TRACKS, --number-tracks NUMBER_TRACKS
