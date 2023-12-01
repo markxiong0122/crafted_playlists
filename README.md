@@ -65,6 +65,9 @@ $ conda activate tune_craft
 $ which python
 /home/<user>/anaconda3/envs/src/bin/python
 ```
+#### env.
+
+Configure your username (could be fount in your Spotify profile) in .env
 
 #### main.py <a name = "src_main"></a>
 
@@ -73,57 +76,88 @@ directly.
 
 ```ShellSession
 $ python main.py -h
-usage: main.py -u USER_ID [-s SEED_PLAYLIST] [-nt NUMBER_TRACKS] [--new-artists] [--refresh] [--list-playlists] [-h]
+usage: main.py -u USER_ID [-s SEED_PLAYLIST] [-nt NUMBER_TRACKS] [--new-artists] [--refresh] [-pl -LIST_PLAYLISTS] [-gl LIST-GENRES] [-h HELP] [-g GENRE] [-bpm BPM]
 
 TuneCraft - Spotify Playlist Generator
 
-Required Arguments:
-  -u USER_ID, --user-id USER_ID
-                        Your Spotify user ID
 
 Optional Arguments:
+  -u USERNAME --username Configure the account to generate playlist to
   -s SEED_PLAYLIST, --seed-playlist SEED_PLAYLIST
                         The seed playlist ID to generate a new playlist from
   -nt NUMBER_TRACKS, --number-tracks NUMBER_TRACKS
                         Number of tracks in the generated playlist
   --new-artists         Include only new artists
   --refresh             Refresh the local database from Spotify
-  --list-playlists      List all your playlists
+  -pl --list-playlists  List all your playlists
+  -gl --list-genres     List all genres
+  -g --genre            Include only the input genre
+  -bpm --bpm            Include only tracks with the specified tempo
   -h, --help            Show this help message and exit
+
+
+```
+#### All Available Genres on Spotify:
+
+```ShellSession
+Available Genre: {'genres': ['acoustic', 'afrobeat', 'alt-rock', 'alternative', 'ambient', 'anime', 'black-metal', 'bluegrass', 'blues', 'bossanova', 'brazil', 'breakbeat', 'british', 'cantopop', 'chicago-house', 'children', 'chill', 'classical', 'club', 'comedy', 'country', 'dance', 'dancehall', 'death-metal', 'deep-house', 'detroit-techno', 'disco', 'disney', 'drum-and-bass', 'dub', 'dubstep', 'edm', 'electro', 'electronic', 'emo', 'folk', 'forro', 'french', 'funk', 'garage', 'german', 'gospel', 'goth', 'grindcore', 'groove', 'grunge', 'guitar', 'happy', 'hard-rock', 'hardcore', 'hardstyle', 'heavy-metal', 'hip-hop', 'holidays', 'honky-tonk', 'house', 'idm', 'indian', 'indie', 'indie-pop', 'industrial', 'iranian', 'j-dance', 'j-idol', 'j-pop', 'j-rock', 'jazz', 'k-pop', 'kids', 'latin', 'latino', 'malay', 'mandopop', 'metal', 'metal-misc', 'metalcore', 'minimal-techno', 'movies', 'mpb', 'new-age', 'new-release', 'opera', 'pagode', 'party', 'philippines-opm', 'piano', 'pop', 'pop-film', 'post-dubstep', 'power-pop', 'progressive-house', 'psych-rock', 'punk', 'punk-rock', 'r-n-b', 'rainy-day', 'reggae', 'reggaeton', 'road-trip', 'rock', 'rock-n-roll', 'rockabilly', 'romance', 'sad', 'salsa', 'samba', 'sertanejo', 'show-tunes', 'singer-songwriter', 'ska', 'sleep', 'songwriter', 'soul', 'soundtracks', 'spanish', 'study', 'summer', 'swedish', 'synth-pop', 'tango', 'techno', 'trance', 'trip-hop', 'turkish', 'work-out', 'world-music']}
 ```
 
 #### Usage Examples <a name="usage_examples"></a>
 
+Get all playlists under the user's account and corresponding IDs:
+
+  ```ShellSession
+  $ python main.py -pl
+  ```
+  - You should expect something like (before the playlist name is the playlist id):
+    ```ShellSession
+    $ Welcome to Spotify Playlist Generator!
+      Your playlists:
+      5cvqOBnWyutLDR9gn2qGCP: #RECENT
+      4kihcTS1QYwAtKjkAtabkP: House
+      5M9qy5FiKU0wSPZOWglrMO: jazz hiphop
+    ```
+    
+Get all genres collected on Spotify:
+  ```ShellSession
+  $ python main.py -gl
+  ```
+
 Generate a new playlist based on a seed playlist ID with 20 tracks:
 
 ```ShellSession
-$ python main.py -u your_user_id -s your_seed_playlist_id -nt 20
+$ python main.py -s your_seed_playlist_id -nt 20
+```
+Generate a new hiphop playlist based on a seed playlist ID with 20 tracks with 70 bpm:
+
+```ShellSession
+$ python main.py -s your_seed_playlist_id -nt 20 -g hip-hop -bpm 70
 ```
 
 Generate a new playlist with only new artists:
 
 ```ShellSession
-$ python main.py -u your_user_id -s your_seed_playlist_id --new-artists
-```
-
-List all your playlists:
-
-```ShellSession
-$ python main.py -u your_user_id --list-playlists
+$ python main.py -s your_seed_playlist_id --new-artists
 ```
 
 Refresh the local database and list all your playlists:
 
 ```ShellSession
-$ python main.py -u your_user_id --refresh --list-playlists
+$ python main.py --refresh --list-playlists
 ```
 
 
 Todo <a name = "todo"></a>
 
-Add support for generating playlists based on moods and genres.
-Implement a web interface for easier user interaction.
-Improve the playlist generation algorithm for better recommendations.
+- Add support for generating playlists based on moods.
+
+- Implement a web interface for easier user interaction.
+
+- Improve the playlist generation algorithm for better recommendations.
+
+
+
 
 License <a name = "license"></a>
 
